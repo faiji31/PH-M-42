@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from './Link';
+import { Menu } from 'lucide-react';
 const NavigationData=[
   {
     "id": 1,
@@ -31,8 +32,12 @@ const NavigationData=[
 
 const NavBar = () => {
     return (
-        <nav>
-           <ul className='flex'>
+        <nav className='flex justify-between mx-10 '>
+            <span className='flex gap-4'>
+                <Menu className='md:hidden'></Menu>
+            <h3 className=''>My Navbar</h3>
+            </span>
+           <ul className='flex '>
              {
                 NavigationData.map(route=><Link key={route.id} route={route}></Link>)
             }
